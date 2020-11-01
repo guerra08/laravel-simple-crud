@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'index']);
 
-Route::get('/users/signup', function () {
-    return view('add-user');
-});
+Route::get('/users/add', function(){ return view('add-user'); })->name('get-create-user-page');
 
-Route::post('/users/signup', [UserController::class, 'registerUser']);
+Route::get('/users/edit/{id}', [UserController::class, 'getUserEditPage'])->name('get-edit-user-page');
 
-Route::get('/users/delete/{id}', [UserController::class, 'deleteUser']);
+Route::post('/users/add', [UserController::class, 'registerUser'])->name('create-user');
+
+Route::patch('/users/edit/{id}', [UserController::class, 'updateUser'])->name('edit-user');
+
+Route::delete('/users/delete/{id}', [UserController::class, 'deleteUser'])->name('delete-user');

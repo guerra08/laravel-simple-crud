@@ -9,11 +9,19 @@
 </head>
 <body>
     <h1>Welcome!</h1>
+    <a href="{{ route('get-create-user-page') }}"><h2>Add an user</h2></a>
     <h2>Registered users: </h2>
     @foreach($users as $user)
         <p>{{$user->name}}</p>
         <p>{{$user->email}}</p>
-        <a href="/users/delete/{{$user->id}}">Delete</a>
+        <form method="get" action="{{ route('get-edit-user-page', ['id'=>$user->id]) }}">
+            <button type="submit">Edit</button>
+        </form>
+        <form method="post" action="{{ route('delete-user', ['id'=>$user->id]) }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button>
+        </form>
         <hr/>
     @endforeach
 </body>

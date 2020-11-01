@@ -8,6 +8,9 @@
     <title>Success!</title>
 </head>
 <body>
-    <h1>Signup complete! Welcome, {{$user}}</h1>
+    <h1>Added a new user:</h1>
+    <h2>ID: {{$user->id}}</h2>
+    <h2>Name: {{$user->name}}</h2>
+    <h2>Email: {{$user->email}}</h2>
 </body>
 </html>
