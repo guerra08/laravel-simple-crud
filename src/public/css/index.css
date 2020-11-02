@@ -1,0 +1,28 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-style: solid;
+    width: 280px;
+    height: 160px;
+    margin-bottom: 8px;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+}
+
+.user-actions{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-self: flex-start;
+}
